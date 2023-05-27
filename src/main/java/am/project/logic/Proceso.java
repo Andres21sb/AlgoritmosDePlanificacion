@@ -1,2 +1,70 @@
-package am.project.logic;public class Proceso {
+package am.project.logic;
+
+public class Proceso {
+    String nombre;
+    int llegada;
+    int duracion;
+    int prioridad;
+    boolean ejecucion;
+    public Proceso() {
+    }
+
+    public Proceso(String nombre, int llegada, int duracion, int prioridad, boolean ejecucion) {
+        this.nombre = nombre;
+        this.llegada = llegada;
+        this.duracion = duracion;
+        this.prioridad = prioridad;
+        this.ejecucion = ejecucion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getLlegada() {
+        return llegada;
+    }
+
+    public void setLlegada(int llegada) {
+        this.llegada = llegada;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
+    }
+
+    public boolean isEjecucion() {
+        return ejecucion;
+    }
+
+    public void setEjecucion(boolean ejecucion) {
+        this.ejecucion = ejecucion;
+    }
+
+    @Override
+    public String toString() {
+        return "Proceso{" +
+                "nombre='" + nombre + '\'' +
+                ", llegada=" + llegada +
+                ", duracion=" + duracion +
+                ", prioridad=" + prioridad +
+                ", ejecucion=" + ejecucion +
+                '}';
+    }
 }
