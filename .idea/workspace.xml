@@ -7,6 +7,7 @@
     <list default="true" id="87792c31-d9f6-44ae-926b-1745d7e4f37b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "289",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
@@ -68,7 +70,7 @@
       <workItem from="1685154756825" duration="2773000" />
       <workItem from="1685332811417" duration="170000" />
       <workItem from="1685407664177" duration="1973000" />
-      <workItem from="1685410479868" duration="2739000" />
+      <workItem from="1685410479868" duration="4174000" />
     </task>
     <servers />
   </component>
