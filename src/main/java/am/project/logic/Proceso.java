@@ -8,13 +8,19 @@ public class Proceso {
     boolean ejecucion;
     public Proceso() {
     }
-
     public Proceso(String nombre, int llegada, int duracion, int prioridad, boolean ejecucion) {
         this.nombre = nombre;
         this.llegada = llegada;
         this.duracion = duracion;
         this.prioridad = prioridad;
         this.ejecucion = ejecucion;
+    }
+
+    public Proceso(String nombre, int duracion, int llegada, int prioridad) {
+        this.nombre = nombre;
+        this.llegada = llegada;
+        this.duracion = duracion;
+        this.prioridad = prioridad;
     }
 
     public String getNombre() {
