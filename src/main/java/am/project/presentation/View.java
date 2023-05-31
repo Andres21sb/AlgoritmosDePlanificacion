@@ -80,7 +80,7 @@ public class View {
                 //SJF sjf = new SJF();
 
                 // Pasar la lista de procesos a la clase SJF
-                //sjf.procesoFCFS(listaProcesos);
+                //sjf.procesoSJF(listaProcesos);
             }
         });
 
@@ -102,7 +102,7 @@ public class View {
                 //FCFS fcfs = new FCFS();
 
                 // Pasar la lista de procesos a la clase FCFS
-                //fcfs.procesoSRTF(listaProcesos);
+                //fcfs.procesoFCFS(listaProcesos);
             }
         });
 
