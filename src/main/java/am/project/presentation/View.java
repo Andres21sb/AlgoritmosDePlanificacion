@@ -73,28 +73,6 @@ public class View {
             }
         });
 
-        buttonSJF.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase SJF
-                //SJF sjf = new SJF();
-
-                // Pasar la lista de procesos a la clase SJF
-                //sjf.procesoSJF(listaProcesos);
-            }
-        });
-
-        buttonSRTF.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase SJF
-                //SJF sjf = new SJF();
-
-                // Pasar la lista de procesos a la clase SJF
-                //sjf.procesoSRTF(listaProcesos);
-            }
-        });
-
         ButtonFCFS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,6 +83,30 @@ public class View {
                 //sjf.procesoFCFS(listaProcesos);
             }
         });
+
+        buttonSJF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la clase SRTF
+                //SRTF srtf = new SRTF();
+
+                // Pasar la lista de procesos a la clase SRTF
+                //srtf.procesoSRTF(listaProcesos);
+            }
+        });
+
+        buttonSRTF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la clase FCFS
+                //FCFS fcfs = new FCFS();
+
+                // Pasar la lista de procesos a la clase FCFS
+                //fcfs.procesoSRTF(listaProcesos);
+            }
+        });
+
+
 
     }
 
