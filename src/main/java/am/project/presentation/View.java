@@ -17,6 +17,15 @@ public class View {
     private JTextField DuracionTextField;
     private JTextField LlegadaTextField;
     private JTextField PrioridadTextField;
+    private JPanel panel4;
+    private JPanel panel5;
+    private JButton buttonRR;
+    private JButton buttonSJF;
+    private JButton buttonSRTF;
+    private JButton ButtonFCFS;
+    private JTextField textFieldQuantum;
+    private JLabel JLabelQuantum;
+    private JButton buttonEnviar;
     private JTextArea ProcesosTextArea; // Añade este campo
     private Proceso proceso;
 
@@ -42,6 +51,40 @@ public class View {
                 PrioridadTextField.setText("");
             }
         });
+        buttonRR.addActionListener(new ActionListener() {
+            JLabel labelQuantum =new JLabel("Quantum");
+            //labelQuantum.setText("Quantum");
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              getJLabelQuantum().setVisible(true);
+              getTextFieldQuantum().setVisible(true);
+              getButtonEnviar().setVisible(true);
+            }
+        });
+    }
+
+    public JButton getButtonEnviar() {
+        return buttonEnviar;
+    }
+
+    public void setButtonEnviar(JButton buttonEnviar) {
+        this.buttonEnviar = buttonEnviar;
+    }
+
+    public JTextField getTextFieldQuantum() {
+        return textFieldQuantum;
+    }
+
+    public void setTextFieldQuantum(JTextField textFieldQuantum) {
+        this.textFieldQuantum = textFieldQuantum;
+    }
+
+    public JLabel getJLabelQuantum() {
+        return JLabelQuantum;
+    }
+
+    public void setJLabelQuantum(JLabel JLabelQuantum) {
+        this.JLabelQuantum = JLabelQuantum;
     }
 
     public JPanel getPanelPrincipal() {
