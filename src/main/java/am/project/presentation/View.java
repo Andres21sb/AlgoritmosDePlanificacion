@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+//import am.project.logic.RoundRobin;
+//import am.project.logic.SJF;
+//import am.project.logic.SRTF;
+//import am.project.logic.FCFS;
+
+
 public class View {
     private JPanel panelPrincipal;
     private JLabel mainLabel;
@@ -26,7 +32,7 @@ public class View {
     private JTextField textFieldQuantum;
     private JLabel JLabelQuantum;
     private JButton buttonEnviar;
-    private JTextArea ProcesosTextArea; // Añade este campo
+    private JTextArea ProcesosTextArea;
     private Proceso proceso;
 
     private List<Proceso> listaProcesos;
@@ -59,8 +65,47 @@ public class View {
               getJLabelQuantum().setVisible(true);
               getTextFieldQuantum().setVisible(true);
               getButtonEnviar().setVisible(true);
+                // Crear una instancia de la clase roundRobin
+               // RoundRobin roundRobin = new RoundRobin();
+
+                // Pasar la lista de procesos a la clase roundRobin
+                //roundRobin.procesoRR(listaProcesos);
             }
         });
+
+        buttonSJF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la clase SJF
+                //SJF sjf = new SJF();
+
+                // Pasar la lista de procesos a la clase SJF
+                //sjf.procesoSJF(listaProcesos);
+            }
+        });
+
+        buttonSRTF.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la clase SJF
+                //SJF sjf = new SJF();
+
+                // Pasar la lista de procesos a la clase SJF
+                //sjf.procesoSRTF(listaProcesos);
+            }
+        });
+
+        ButtonFCFS.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Crear una instancia de la clase SJF
+                //SJF sjf = new SJF();
+
+                // Pasar la lista de procesos a la clase SJF
+                //sjf.procesoFCFS(listaProcesos);
+            }
+        });
+
     }
 
     public JButton getButtonEnviar() {
