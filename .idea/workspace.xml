@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87792c31-d9f6-44ae-926b-1745d7e4f37b" name="Changes" comment="" />
+    <list default="true" id="87792c31-d9f6-44ae-926b-1745d7e4f37b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/Algoritmos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +99,7 @@
       <workItem from="1685491412207" duration="411000" />
       <workItem from="1685495740308" duration="4182000" />
       <workItem from="1685500929144" duration="2145000" />
+      <workItem from="1686417687938" duration="8516000" />
     </task>
     <servers />
   </component>
@@ -112,5 +119,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

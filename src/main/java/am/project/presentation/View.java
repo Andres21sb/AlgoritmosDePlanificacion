@@ -1,4 +1,5 @@
 package am.project.presentation;
+import am.project.logic.Algoritmos;
 import am.project.logic.Proceso;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -37,8 +38,23 @@ public class View {
 
     private List<Proceso> listaProcesos;
 
+    private Algoritmos algoritmos;
+
     public View() {
         listaProcesos = new ArrayList<>();
+        //datos quemados
+        Proceso proceso1 = new Proceso("P1", 7, 0, 1);
+        Proceso proceso2 = new Proceso("P2", 4, 4, 2);
+        Proceso proceso3 = new Proceso("P3", 1, 2, 3);
+        Proceso proceso4 = new Proceso("P4", 4, 5, 4);
+        //Proceso proceso5 = new Proceso("P5", 4000, 5, 5);
+
+        listaProcesos = new ArrayList<>();
+        listaProcesos.add(proceso1);
+        listaProcesos.add(proceso2);
+        listaProcesos.add(proceso3);
+        listaProcesos.add(proceso4);
+        //listaProcesos.add(proceso5);
         AgregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,11 +92,14 @@ public class View {
         ButtonFCFS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase SJF
-                //SJF sjf = new SJF();
+                // Crear una instancia de la clase FCFS
+                //FCFS fcfs = new FCFS();
 
-                // Pasar la lista de procesos a la clase SJF
-                //sjf.procesoSJF(listaProcesos);
+                // Pasar la lista de procesos a la clase FCFS
+                //fcfs.procesoFCFS(listaProcesos);
+
+                algoritmos = new Algoritmos(listaProcesos);
+                algoritmos.FCFS();
             }
         });
 
@@ -98,11 +117,7 @@ public class View {
         buttonSRTF.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase FCFS
-                //FCFS fcfs = new FCFS();
 
-                // Pasar la lista de procesos a la clase FCFS
-                //fcfs.procesoFCFS(listaProcesos);
             }
         });
 
