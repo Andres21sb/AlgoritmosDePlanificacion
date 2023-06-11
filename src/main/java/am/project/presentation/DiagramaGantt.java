@@ -22,7 +22,7 @@ public class DiagramaGantt extends JFrame {
         this.tiempoTotal = calcularTiempoTotal();
 
         setTitle("Diagrama de Gantt");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(2, tiempoTotal)); // 2 filas: una para etiquetas de tiempo y otra para barras de proceso
 
         // Agregar las etiquetas de tiempo en la primera fila

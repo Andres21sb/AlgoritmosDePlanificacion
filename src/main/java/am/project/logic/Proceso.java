@@ -3,38 +3,35 @@ package am.project.logic;
 import java.awt.*;
 import java.util.Random;
 
-public class Proceso implements Runnable{
-    String nombre;
-    int llegada;
-    int duracion;
-    int prioridad;
-    boolean ejecucion;
+import java.awt.Color;
 
+public class Proceso implements Runnable {
+    private String nombre;
+    private int llegada;
+    private int duracion;
+    private int prioridad;
+
+    private boolean ejecucion;
     private int tiempoInicio;
     private int tiempoFinalizacion;
+    private int tiempoRestante;
 
     private Color color;
 
-    int tiempoEspera = 0;
+    private int tiempoEspera = 0;
+
     public Proceso() {
     }
+
     public Proceso(String nombre, int llegada, int duracion, int prioridad, boolean ejecucion) {
         this.nombre = nombre;
         this.llegada = llegada;
         this.duracion = duracion;
         this.prioridad = prioridad;
         this.ejecucion = ejecucion;
+        this.tiempoRestante = duracion;
         Random random = new Random();
-        color = new Color(random.nextInt(256),random.nextInt(256), random.nextInt(256));
-    }
-
-    public Proceso(String nombre, int duracion, int llegada, int prioridad) {
-        this.nombre = nombre;
-        this.llegada = llegada;
-        this.duracion = duracion;
-        this.prioridad = prioridad;
-        Random random = new Random();
-        color = new Color(random.nextInt(256),random.nextInt(256), random.nextInt(256));
+        color = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
     }
 
     public Color getColor() {
@@ -59,6 +56,14 @@ public class Proceso implements Runnable{
 
     public void setTiempoFinalizacion(int tiempoFinalizacion) {
         this.tiempoFinalizacion = tiempoFinalizacion;
+    }
+
+    public int getTiempoRestante() {
+        return tiempoRestante;
+    }
+
+    public void setTiempoRestante(int tiempoRestante) {
+        this.tiempoRestante = tiempoRestante;
     }
 
     public int getTiempoEspera() {
@@ -121,19 +126,35 @@ public class Proceso implements Runnable{
                 '}';
     }
 
-
     @Override
     public void run() {
         // Lógica del proceso en su ejecución
         System.out.println("Proceso " + nombre + " en ejecución");
         try {
-           // Thread.sleep(duracion); // Simulación de la duración del proceso
-            Thread.sleep(1); // Simulación de la duración del proceso
-
+            while (tiempoRestante > 0) {
+                Thread.sleep(1); // Simulación de la duración del proceso
+                tiempoRestante--;
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.println("Proceso " + nombre + " finalizado");
+    }
+
+    public void suspender() {
+        ejecucion = false;
+    }
+
+    public void reanudar() {
+        ejecucion = true;
+    }
+
+    public void ejecutar() {
+        // No se necesita implementar en este caso ya que el tiempo restante se reduce en el método run()
+    }
+
+    public void finalizar() {
+        // No se necesita implementar en este caso ya que el proceso se elimina de la lista en el algoritmo principal
     }
 
     public Boolean isInTime(int time) {
