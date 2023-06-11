@@ -1,6 +1,8 @@
 package am.project.logic;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import java.awt.Color;
@@ -15,6 +17,8 @@ public class Proceso implements Runnable {
     private int tiempoInicio;
     private int tiempoFinalizacion;
     private int tiempoRestante;
+
+    private List<Integer> arraySegundosEnEjecucion;
 
     private Color color;
 
@@ -32,6 +36,15 @@ public class Proceso implements Runnable {
         this.tiempoRestante = duracion;
         Random random = new Random();
         color = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
+        this.arraySegundosEnEjecucion = new ArrayList<>();
+    }
+
+    public List<Integer> getArraySegundosEnEjecucion() {
+        return arraySegundosEnEjecucion;
+    }
+
+    public void setArraySegundosEnEjecucion(List<Integer> arraySegundosEnEjecucion) {
+        this.arraySegundosEnEjecucion = arraySegundosEnEjecucion;
     }
 
     public Color getColor() {

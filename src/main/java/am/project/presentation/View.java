@@ -45,11 +45,11 @@ public class View {
     public View() {
         listaProcesos = new ArrayList<>();
         //datos quemados
-        Proceso proceso1 = new Proceso("P1", 4, 2, 6,false);
-        Proceso proceso2 = new Proceso("P2", 7, 2, 7,false);
-        Proceso proceso3 = new Proceso("P3", 3, 5, 8,false);
+        Proceso proceso1 = new Proceso("P1", 0, 7, 6,false);
+        Proceso proceso2 = new Proceso("P2", 2, 4, 7,false);
+        Proceso proceso3 = new Proceso("P3", 4, 1, 8,false);
         Proceso proceso4 = new Proceso("P4", 5, 4, 9,false);
-        Proceso proceso5 = new Proceso("P5", 9, 3, 10,false);
+       // Proceso proceso5 = new Proceso("P5", 9, 3, 10,false);
 
 
 
@@ -61,7 +61,7 @@ public class View {
         listaProcesos.add(proceso2);
         listaProcesos.add(proceso3);
         listaProcesos.add(proceso4);
-        listaProcesos.add(proceso5);
+       // listaProcesos.add(proceso5);
         //listaProcesos.add(proceso5);
         //listaProcesos.add(proceso6);
 
