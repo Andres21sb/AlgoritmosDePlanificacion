@@ -1,5 +1,8 @@
 package am.project.logic;
 
+import java.awt.*;
+import java.util.Random;
+
 public class Proceso implements Runnable{
     String nombre;
     int llegada;
@@ -10,6 +13,8 @@ public class Proceso implements Runnable{
     private int tiempoInicio;
     private int tiempoFinalizacion;
 
+    private Color color;
+
     int tiempoEspera = 0;
     public Proceso() {
     }
@@ -19,6 +24,8 @@ public class Proceso implements Runnable{
         this.duracion = duracion;
         this.prioridad = prioridad;
         this.ejecucion = ejecucion;
+        Random random = new Random();
+        color = new Color(random.nextInt(256),random.nextInt(256), random.nextInt(256));
     }
 
     public Proceso(String nombre, int duracion, int llegada, int prioridad) {
@@ -26,6 +33,16 @@ public class Proceso implements Runnable{
         this.llegada = llegada;
         this.duracion = duracion;
         this.prioridad = prioridad;
+        Random random = new Random();
+        color = new Color(random.nextInt(256),random.nextInt(256), random.nextInt(256));
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 
     public int getTiempoInicio() {
@@ -111,7 +128,7 @@ public class Proceso implements Runnable{
         System.out.println("Proceso " + nombre + " en ejecución");
         try {
            // Thread.sleep(duracion); // Simulación de la duración del proceso
-            Thread.sleep(1000); // Simulación de la duración del proceso
+            Thread.sleep(1); // Simulación de la duración del proceso
 
         } catch (InterruptedException e) {
             e.printStackTrace();

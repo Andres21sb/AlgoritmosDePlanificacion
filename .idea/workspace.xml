@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="87792c31-d9f6-44ae-926b-1745d7e4f37b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/Algoritmos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/FCFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/FCFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" afterDir="false" />
@@ -100,7 +100,7 @@
       <workItem from="1685495740308" duration="4182000" />
       <workItem from="1685500929144" duration="2145000" />
       <workItem from="1686417687938" duration="8771000" />
-      <workItem from="1686438452933" duration="9231000" />
+      <workItem from="1686438452933" duration="10652000" />
     </task>
     <servers />
   </component>
@@ -126,7 +126,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

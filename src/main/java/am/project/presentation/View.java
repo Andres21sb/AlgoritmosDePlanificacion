@@ -50,14 +50,14 @@ public class View {
         Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
         Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
 
-       /* listaProcesos = new ArrayList<>();
+        listaProcesos = new ArrayList<>();
         listaProcesos.add(proceso1);
         listaProcesos.add(proceso2);
         listaProcesos.add(proceso3);
-        listaProcesos.add(proceso4);*/
+        listaProcesos.add(proceso4);
 
-        listaProcesos.add(proceso5);
-        listaProcesos.add(proceso6);
+        /*listaProcesos.add(proceso5);
+        listaProcesos.add(proceso6);*/
         AgregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

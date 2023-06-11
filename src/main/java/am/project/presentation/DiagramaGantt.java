@@ -7,6 +7,8 @@ import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class DiagramaGantt extends JFrame {
         // Agregar las etiquetas de tiempo en la primera fila
         add(new JLabel("Tiempo"));
         for (int i = 0; i < tiempoTotal; i++) {
-            add(new JLabel(String.valueOf(i )));
+            add(new JLabel("      "+String.valueOf(i )));
         }
 
         // Agregar las barras de proceso en la segunda fila
@@ -35,8 +37,17 @@ public class DiagramaGantt extends JFrame {
             JPanel panel = new JPanel();
             Proceso proceso = getProcesoEnTiempo(i);
             if (proceso != null) {
-                panel.setBackground(Color.GREEN);
-                panel.add(new JLabel(proceso.getNombre()));
+                if(proceso.getColor() == Color.white){
+                    panel.setBackground(Color.green);
+                }
+                else{
+                    panel.setBackground(proceso.getColor());
+                }
+                Border borde = new LineBorder(Color.black, 2);
+                panel.setBorder(borde);
+                JLabel label = new JLabel(proceso.getNombre());
+                label.setForeground(Color.WHITE);
+                panel.add(label);
             } else {
                 panel.setBackground(Color.WHITE);
             }
