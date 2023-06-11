@@ -60,7 +60,7 @@ public class DiagramaGantt extends JFrame {
     private int calcularTiempoTotal() {
         int tiempoMaximo = 0;
         for (Proceso proceso : colaDeEjecucionProcesos) {
-            tiempoMaximo += proceso.getTiempoFinalizacion();
+                tiempoMaximo = proceso.getTiempoFinalizacion()+2;
         }
         return tiempoMaximo;
     }

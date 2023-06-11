@@ -1,5 +1,4 @@
 package am.project.presentation;
-import am.project.logic.Algoritmos;
 import am.project.logic.FCFS;
 import am.project.logic.Proceso;
 import javax.swing.*;
@@ -39,21 +38,20 @@ public class View {
 
     private List<Proceso> listaProcesos;
 
-    private Algoritmos algoritmos;
 
     public View() {
         listaProcesos = new ArrayList<>();
         //datos quemados
-        /*Proceso proceso1 = new Proceso("P1", 7, 0, 1);
-        Proceso proceso2 = new Proceso("P2", 4, 4, 2);
+        Proceso proceso1 = new Proceso("P1", 7, 5, 1);
+        Proceso proceso2 = new Proceso("P2", 3, 0, 2);
         Proceso proceso3 = new Proceso("P3", 1, 2, 3);
-        Proceso proceso4 = new Proceso("P4", 4, 5, 4);*/
+        Proceso proceso4 = new Proceso("P4", 4, 5, 4);
 
         Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
         Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
 
-        listaProcesos = new ArrayList<>();
-        /*listaProcesos.add(proceso1);
+       /* listaProcesos = new ArrayList<>();
+        listaProcesos.add(proceso1);
         listaProcesos.add(proceso2);
         listaProcesos.add(proceso3);
         listaProcesos.add(proceso4);*/

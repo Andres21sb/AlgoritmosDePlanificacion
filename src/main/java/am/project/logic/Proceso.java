@@ -120,6 +120,6 @@ public class Proceso implements Runnable{
     }
 
     public Boolean isInTime(int time) {
-        return time >= tiempoInicio && time <= tiempoFinalizacion;
+        return time >= tiempoInicio && time < tiempoFinalizacion;
     }
 }
