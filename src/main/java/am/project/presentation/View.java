@@ -1,5 +1,6 @@
 package am.project.presentation;
 import am.project.logic.Algoritmos;
+import am.project.logic.FCFS;
 import am.project.logic.Proceso;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -43,18 +44,22 @@ public class View {
     public View() {
         listaProcesos = new ArrayList<>();
         //datos quemados
-        Proceso proceso1 = new Proceso("P1", 7, 0, 1);
+        /*Proceso proceso1 = new Proceso("P1", 7, 0, 1);
         Proceso proceso2 = new Proceso("P2", 4, 4, 2);
         Proceso proceso3 = new Proceso("P3", 1, 2, 3);
-        Proceso proceso4 = new Proceso("P4", 4, 5, 4);
-        //Proceso proceso5 = new Proceso("P5", 4000, 5, 5);
+        Proceso proceso4 = new Proceso("P4", 4, 5, 4);*/
+
+        Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
+        Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
 
         listaProcesos = new ArrayList<>();
-        listaProcesos.add(proceso1);
+        /*listaProcesos.add(proceso1);
         listaProcesos.add(proceso2);
         listaProcesos.add(proceso3);
-        listaProcesos.add(proceso4);
-        //listaProcesos.add(proceso5);
+        listaProcesos.add(proceso4);*/
+
+        listaProcesos.add(proceso5);
+        listaProcesos.add(proceso6);
         AgregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -98,8 +103,7 @@ public class View {
                 // Pasar la lista de procesos a la clase FCFS
                 //fcfs.procesoFCFS(listaProcesos);
 
-                algoritmos = new Algoritmos(listaProcesos);
-                algoritmos.FCFS();
+                new FCFS(listaProcesos).algoritmoFCFS();
             }
         });
 

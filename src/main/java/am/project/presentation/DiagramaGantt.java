@@ -26,7 +26,7 @@ public class DiagramaGantt extends JFrame {
         // Agregar las etiquetas de tiempo en la primera fila
         add(new JLabel("Tiempo"));
         for (int i = 0; i < tiempoTotal; i++) {
-            add(new JLabel(String.valueOf(i + 1)));
+            add(new JLabel(String.valueOf(i )));
         }
 
         // Agregar las barras de proceso en la segunda fila
@@ -36,7 +36,7 @@ public class DiagramaGantt extends JFrame {
             Proceso proceso = getProcesoEnTiempo(i);
             if (proceso != null) {
                 panel.setBackground(Color.GREEN);
-                panel.setToolTipText(proceso.getNombre());
+                panel.add(new JLabel(proceso.getNombre()));
             } else {
                 panel.setBackground(Color.WHITE);
             }
@@ -50,7 +50,7 @@ public class DiagramaGantt extends JFrame {
 
     private Proceso getProcesoEnTiempo(int tiempo) {
         for (Proceso proceso : colaDeEjecucionProcesos) {
-            if (tiempo >= proceso.getLlegada() && tiempo < (proceso.getLlegada() + proceso.getDuracion())) {
+            if (proceso.isInTime(tiempo)) {
                 return proceso;
             }
         }
@@ -60,7 +60,7 @@ public class DiagramaGantt extends JFrame {
     private int calcularTiempoTotal() {
         int tiempoMaximo = 0;
         for (Proceso proceso : colaDeEjecucionProcesos) {
-            tiempoMaximo += proceso.getDuracion();
+            tiempoMaximo += proceso.getTiempoFinalizacion();
         }
         return tiempoMaximo;
     }

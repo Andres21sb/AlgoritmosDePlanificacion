@@ -74,24 +74,27 @@ public class Algoritmos {
         // Ordenar los procesos según el tiempo de llegada (FCFS)
         listaProcesos.sort(Comparator.comparingInt(Proceso::getLlegada));
 
+        //
+
         lock.lock(); // Adquirir el bloqueo antes de modificar la cola de ejecución
         try {
             // Crear un hilo para cada proceso y agregarlo a la cola de ejecución
             for (Proceso proceso : listaProcesos) {
-                Thread hilo = new Thread(() -> {
+               /* Thread hilo = new Thread(() -> {
                     lock.lock(); // Adquirir el bloqueo antes de acceder a la zona crítica
                     try {
                         proceso.run(); // Ejecutar el proceso en la zona crítica
                     } finally {
                         lock.unlock(); // Liberar el bloqueo después de ejecutar el proceso
                     }
-                });
+                });*/
                 colaDeEjecucionProcesos.add(proceso);
-                hilo.start();
+               // hilo.start();
             }
         } finally {
             lock.unlock(); // Liberar el bloqueo después de modificar la cola de ejecución
         }
+        //crear diagrama
         new DiagramaGantt(colaDeEjecucionProcesos);
     }
 

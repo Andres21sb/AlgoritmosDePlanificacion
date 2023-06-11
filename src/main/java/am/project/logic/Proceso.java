@@ -7,6 +7,9 @@ public class Proceso implements Runnable{
     int prioridad;
     boolean ejecucion;
 
+    private int tiempoInicio;
+    private int tiempoFinalizacion;
+
     int tiempoEspera = 0;
     public Proceso() {
     }
@@ -23,6 +26,22 @@ public class Proceso implements Runnable{
         this.llegada = llegada;
         this.duracion = duracion;
         this.prioridad = prioridad;
+    }
+
+    public int getTiempoInicio() {
+        return tiempoInicio;
+    }
+
+    public void setTiempoInicio(int tiempoInicio) {
+        this.tiempoInicio = tiempoInicio;
+    }
+
+    public int getTiempoFinalizacion() {
+        return tiempoFinalizacion;
+    }
+
+    public void setTiempoFinalizacion(int tiempoFinalizacion) {
+        this.tiempoFinalizacion = tiempoFinalizacion;
     }
 
     public int getTiempoEspera() {
@@ -87,7 +106,7 @@ public class Proceso implements Runnable{
 
 
     @Override
-    public synchronized void run() {
+    public void run() {
         // Lógica del proceso en su ejecución
         System.out.println("Proceso " + nombre + " en ejecución");
         try {
@@ -98,5 +117,9 @@ public class Proceso implements Runnable{
             e.printStackTrace();
         }
         System.out.println("Proceso " + nombre + " finalizado");
+    }
+
+    public Boolean isInTime(int time) {
+        return time >= tiempoInicio && time <= tiempoFinalizacion;
     }
 }
