@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="87792c31-d9f6-44ae-926b-1745d7e4f37b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/Proceso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/logic/SRTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/logic/SRTF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGantt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGanttSRTF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGanttSRTF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <workItem from="1685500929144" duration="2145000" />
       <workItem from="1686417687938" duration="8771000" />
       <workItem from="1686438452933" duration="10652000" />
-      <workItem from="1686772615956" duration="4621000" />
+      <workItem from="1686772615956" duration="6621000" />
     </task>
     <servers />
   </component>
@@ -133,9 +132,14 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/am/project/logic/SRTF.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/am/project/presentation/DiagramaGanttSRTF.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="27" />
+          <line>56</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

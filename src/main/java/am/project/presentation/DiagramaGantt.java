@@ -48,6 +48,7 @@ public class DiagramaGantt extends JFrame {
                 panel.setBorder(borde);
                 JLabel label = new JLabel(proceso.getNombre());
                 label.setForeground(Color.WHITE);
+                label.setToolTipText(proceso.toString());
                 panel.add(label);
             } else {
                 panel.setBackground(Color.WHITE);
@@ -62,6 +63,7 @@ public class DiagramaGantt extends JFrame {
             Border borde = new LineBorder(Color.black, 2);
             panel.setBorder(borde);
             label.setForeground(proceso.getColor().darker());
+            label.setToolTipText(proceso.toString());
             panel.add(label);
             add(panel);
         }

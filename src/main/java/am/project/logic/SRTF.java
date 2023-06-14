@@ -110,6 +110,13 @@ public class SRTF {
                 }
             }
 
+            //Incrementar contador de tiempo espera
+            if (!colaEspera.isEmpty()) {
+                for(Proceso proceso: colaEspera){
+                    proceso.setTiempoEspera(proceso.getTiempoEspera()+1);
+                }
+            }
+
             //validar si hay procesos en espera
             if(!colaEspera.isEmpty()){
                 //ordenar por duracion
@@ -120,6 +127,9 @@ public class SRTF {
                 colaEspera.get(0).getArraySegundosEnEjecucion().add(currentTime);
                 //disminuir el tiempo restante
                 colaEspera.get(0).setTiempoRestante(colaEspera.get(0).getTiempoRestante()-1);
+                //disminuir en 1 el tiempo de espera si es mayor a 0
+                if(colaEspera.get(0).getTiempoEspera()>0)
+                    colaEspera.get(0).setTiempoEspera(colaEspera.get(0).getTiempoEspera()-1);
             }
 
             if(currentTime>=this.tiempoMax()){
@@ -127,7 +137,7 @@ public class SRTF {
             }
             currentTime++;
         }
-        new DiagramaGanttSRTF(colaFinal);
+        new DiagramaGanttSRTF(colaFinal,listaProcesos);
 
     }
 
