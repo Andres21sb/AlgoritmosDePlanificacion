@@ -7,9 +7,9 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         //Crear el frame
-        JFrame frame = new JFrame("mainFrame");
+        JFrame frame = new JFrame("Algoritmos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1320, 720);
+        frame.setSize(1320, 400);
         frame.setLocationRelativeTo(null);
 
         View view = new View();

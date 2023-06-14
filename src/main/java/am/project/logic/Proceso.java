@@ -1,6 +1,7 @@
 package am.project.logic;
 
 import java.awt.*;
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -172,5 +173,11 @@ public class Proceso implements Runnable {
 
     public Boolean isInTime(int time) {
         return time >= tiempoInicio && time < tiempoFinalizacion;
+    }
+
+    public int espera(){
+        int espera = 0;
+        espera = (this.tiempoInicio-this.llegada);
+        return espera;
     }
 }

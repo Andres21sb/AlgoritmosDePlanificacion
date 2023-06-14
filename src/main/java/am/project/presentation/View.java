@@ -74,7 +74,7 @@ public class View {
                 int duracion = Integer.parseInt(DuracionTextField.getText());
                 int llegada = Integer.parseInt(LlegadaTextField.getText());
                 int prioridad = Integer.parseInt(PrioridadTextField.getText());
-                proceso = new Proceso(nombre, duracion, llegada, prioridad,false);
+                proceso = new Proceso(nombre, llegada,  duracion, prioridad,false);
                 listaProcesos.add(proceso);
                 // Muestra el nuevo proceso en el JTextArea
                 ProcesosTextArea.append(proceso.toString() + "\n");
