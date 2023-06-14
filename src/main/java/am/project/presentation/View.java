@@ -1,5 +1,9 @@
 package am.project.presentation;
+import am.project.logic.FCFS;
 import am.project.logic.Proceso;
+import am.project.logic.SJF;
+import am.project.logic.SRTF;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,8 +41,32 @@ public class View {
 
     private List<Proceso> listaProcesos;
 
+
     public View() {
         listaProcesos = new ArrayList<>();
+        //datos quemados
+        Proceso proceso1 = new Proceso("P1", 0, 7, 6,false);
+        Proceso proceso2 = new Proceso("P2", 2, 4, 7,false);
+        Proceso proceso3 = new Proceso("P3", 4, 1, 8,false);
+        Proceso proceso4 = new Proceso("P4", 5, 4, 9,false);
+       // Proceso proceso5 = new Proceso("P5", 9, 3, 10,false);
+
+
+
+        //Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
+        //Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
+
+        listaProcesos = new ArrayList<>();
+        listaProcesos.add(proceso1);
+        listaProcesos.add(proceso2);
+        listaProcesos.add(proceso3);
+        listaProcesos.add(proceso4);
+       // listaProcesos.add(proceso5);
+        //listaProcesos.add(proceso5);
+        //listaProcesos.add(proceso6);
+
+        /*listaProcesos.add(proceso5);
+        listaProcesos.add(proceso6);*/
         AgregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -46,7 +74,7 @@ public class View {
                 int duracion = Integer.parseInt(DuracionTextField.getText());
                 int llegada = Integer.parseInt(LlegadaTextField.getText());
                 int prioridad = Integer.parseInt(PrioridadTextField.getText());
-                proceso = new Proceso(nombre, duracion, llegada, prioridad);
+                proceso = new Proceso(nombre, llegada,  duracion, prioridad,false);
                 listaProcesos.add(proceso);
                 // Muestra el nuevo proceso en el JTextArea
                 ProcesosTextArea.append(proceso.toString() + "\n");
@@ -76,11 +104,13 @@ public class View {
         ButtonFCFS.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase SJF
-                //SJF sjf = new SJF();
+                // Crear una instancia de la clase FCFS
+                //FCFS fcfs = new FCFS();
 
-                // Pasar la lista de procesos a la clase SJF
-                //sjf.procesoSJF(listaProcesos);
+                // Pasar la lista de procesos a la clase FCFS
+                //fcfs.procesoFCFS(listaProcesos);
+
+                new FCFS(listaProcesos).algoritmoFCFS();
             }
         });
 
@@ -92,17 +122,14 @@ public class View {
 
                 // Pasar la lista de procesos a la clase SRTF
                 //srtf.procesoSRTF(listaProcesos);
+                new SJF(listaProcesos).algoritmoSJF();
             }
         });
 
         buttonSRTF.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de la clase FCFS
-                //FCFS fcfs = new FCFS();
-
-                // Pasar la lista de procesos a la clase FCFS
-                //fcfs.procesoFCFS(listaProcesos);
+                new SRTF(listaProcesos).algoritmoSRTF();
             }
         });
 
