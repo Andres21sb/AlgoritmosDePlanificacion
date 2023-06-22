@@ -1,8 +1,5 @@
 package am.project.presentation;
-import am.project.logic.FCFS;
-import am.project.logic.Proceso;
-import am.project.logic.SJF;
-import am.project.logic.SRTF;
+import am.project.logic.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -51,8 +48,6 @@ public class View {
         Proceso proceso4 = new Proceso("P4", 5, 4, 9,false);
        // Proceso proceso5 = new Proceso("P5", 9, 3, 10,false);
 
-
-
         //Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
         //Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
 
@@ -94,7 +89,7 @@ public class View {
               getTextFieldQuantum().setVisible(true);
               getButtonEnviar().setVisible(true);
                 // Crear una instancia de la clase roundRobin
-               // RoundRobin roundRobin = new RoundRobin();
+                //RoundRobin roundRobin = new RoundRobin();
 
                 // Pasar la lista de procesos a la clase roundRobin
                 //roundRobin.procesoRR(listaProcesos);
@@ -130,6 +125,14 @@ public class View {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new SRTF(listaProcesos).algoritmoSRTF();
+            }
+        });
+
+        buttonEnviar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int quantum = Integer.parseInt(textFieldQuantum.getText());
+                new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
             }
         });
 
