@@ -43,6 +43,7 @@ public class View{
 
 
     public View() {
+        ProcesosTextArea.setText(" Integrantes: Andres Fallas, Andres Mendez, Valeria Gutierrez, Yiriana Guevara \n\n");
         listaProcesos = new ArrayList<>();
         //datos quemados
         Proceso proceso1 = new Proceso("P1", 0, 7, 6,false);
