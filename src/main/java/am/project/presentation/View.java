@@ -34,6 +34,9 @@ public class View {
     private JLabel JLabelQuantum;
     private JButton buttonEnviar;
     private JTextArea ProcesosTextArea;
+    private JButton prioridadButton;
+    private JButton llegadaButton;
+    private JPanel buttonsRR;
     private Proceso proceso;
 
     private List<Proceso> listaProcesos;
@@ -87,7 +90,9 @@ public class View {
             public void actionPerformed(ActionEvent e) {
               getJLabelQuantum().setVisible(true);
               getTextFieldQuantum().setVisible(true);
-              getButtonEnviar().setVisible(true);
+              //getButtonEnviar().setVisible(true);
+              getButtonsRR().setVisible(true);
+
                 // Crear una instancia de la clase roundRobin
                 //RoundRobin roundRobin = new RoundRobin();
 
@@ -128,16 +133,37 @@ public class View {
             }
         });
 
-        buttonEnviar.addActionListener(new ActionListener() {
+       /* buttonEnviar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int quantum = Integer.parseInt(textFieldQuantum.getText());
+                new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+            }
+        });*/
+
+
+        prioridadButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int quantum = Integer.parseInt(textFieldQuantum.getText());
+                    new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+                }
+        });
+        llegadaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int quantum = Integer.parseInt(textFieldQuantum.getText());
                 new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
             }
         });
+    }
 
+    public JPanel getButtonsRR() {
+        return buttonsRR;
+    }
 
-
+    public void setButtonsRR(JPanel buttonsRR) {
+        this.buttonsRR = buttonsRR;
     }
 
     public JButton getButtonEnviar() {
