@@ -1,6 +1,8 @@
 package am.project.logic;
 
+import am.project.presentation.DiagramaGantt;
 import am.project.presentation.DiagramaGanttRR;
+import am.project.presentation.DiagramaGanttSRTF;
 
 import java.util.*;
 
@@ -14,6 +16,10 @@ public class RoundRobin {
     }
 
     public void algoritmoRoundRobin() {
+        List<Proceso> listaProcesosFinal = new ArrayList<>();
+
+        int tiempoFinalizacion = 0;
+
         Collections.sort(listaProcesos, new Comparator<Proceso>() {
             @Override
             public int compare(Proceso proceso1, Proceso proceso2) {
@@ -27,10 +33,27 @@ public class RoundRobin {
         while (!colaProcesos.isEmpty()) {
             Proceso proceso = colaProcesos.poll();
 
-            
+            for (int i = 0; i < quantum; i++) {
+                proceso.setDuracion(proceso.getDuracion() - 1);
+
+                proceso.getArraySegundosEnEjecucion().add(tiempoFinalizacion);
+
+                listaProcesosFinal.add(proceso);
+                if (proceso.getDuracion() == 0) {
+                    proceso.setTiempoFinalizacion(tiempoFinalizacion);
+                    tiempoFinalizacion++;
+                    break;
+                }
+                tiempoFinalizacion++;
+            }
+
+            if (proceso.getDuracion() > 0) {
+                colaProcesos.add(proceso);
+            }
 
         }
 
-        //new DiagramaGanttRR();
+        new DiagramaGanttRR(listaProcesosFinal,listaProcesos);
     }
+
 }
