@@ -23,7 +23,7 @@ public class DiagramaGanttRR extends JFrame {
 
         setTitle("Diagrama de Gantt");
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(4, tiempoTotal)); // 2 filas: una para etiquetas de tiempo y otra para barras de proceso
+        setLayout(new GridLayout(5, tiempoTotal)); // 2 filas: una para etiquetas de tiempo y otra para barras de proceso
 
         // Agregar las etiquetas de tiempo en la primera fila
         add(new JLabel("Tiempo"));
@@ -82,6 +82,21 @@ public class DiagramaGanttRR extends JFrame {
             JOptionPane.showMessageDialog(null, "Se produjo un error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
         for(int i = 0; i < (tiempoTotal-1); i++){
+            add(new JLabel(""));
+        }
+
+        add(new JLabel("Prioridad"));
+        for(Proceso proceso: listaProcesos){
+            JPanel panel = new JPanel();
+            JLabel label = new JLabel(proceso.getNombre() + " -> "+ String.valueOf(proceso.getPrioridad()));
+            Border borde = new LineBorder(Color.black, 2);
+            panel.setBorder(borde);
+            label.setToolTipText(proceso.toString());
+            label.setForeground(proceso.getColor().darker());
+            panel.add(label);
+            add(panel);
+        }
+        for(int i = 0; i < ((tiempoTotal-listaProcesos.size())); i++){
             add(new JLabel(""));
         }
 
