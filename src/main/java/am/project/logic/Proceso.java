@@ -140,14 +140,13 @@ public class Proceso implements Runnable, Cloneable{
 
     @Override
     public String toString() {
-        return "Proceso{" +
-                "nombre='" + nombre + '\'' +
-                ", llegada=" + llegada +
-                ", duracion=" + duracion +
-                ", prioridad=" + prioridad +
-                ", ejecucion=" + ejecucion +
-                ", tiempoEspera=" + tiempoEspera +
-                '}';
+        return "Proceso: " +
+                "Nombre = " + nombre +
+                ", llegada = " + llegada +
+                ", duracion = " + duracion +
+                ", prioridad = " + prioridad +
+                ", ejecucion = " + ejecucion +
+                ", tiempo de espera = " + tiempoEspera;
     }
 
     @Override
