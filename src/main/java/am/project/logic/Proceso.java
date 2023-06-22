@@ -8,7 +8,7 @@ import java.util.Random;
 
 import java.awt.Color;
 
-public class Proceso implements Runnable {
+public class Proceso implements Runnable, Cloneable{
     private String nombre;
     private int llegada;
     private int duracion;
@@ -179,5 +179,11 @@ public class Proceso implements Runnable {
         int espera = 0;
         espera = (this.tiempoInicio-this.llegada);
         return espera;
+    }
+
+    // Override clone method
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone(); // call to Object.clone()
     }
 }
