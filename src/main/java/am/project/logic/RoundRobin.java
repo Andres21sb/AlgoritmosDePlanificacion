@@ -52,7 +52,8 @@ public class RoundRobin {
             }
 
         }
-
+        this.setDuracion(listaProcesos);
+        this.setTiempoEspera(listaProcesos);
         new DiagramaGanttRR(listaProcesosFinal,listaProcesos);
     }
 
@@ -93,8 +94,27 @@ public class RoundRobin {
             }
 
         }
-
+        this.setDuracion(listaProcesos);
+        this.setTiempoEspera(listaProcesos);
         new DiagramaGanttRR(listaProcesosFinal,listaProcesos);
     }
+
+
+    public void setTiempoEspera(List<Proceso> listaProcesos){
+
+        for(Proceso proceso: listaProcesos){
+            proceso.setTiempoEspera((proceso.getTiempoFinalizacion()- proceso.getLlegada()- proceso.getDuracion())+1);
+        }
+
+    }
+
+    public void setDuracion(List<Proceso> listaProcesos){
+
+        for(Proceso proceso: listaProcesos){
+            proceso.setDuracion(proceso.getDuracionInicial());
+        }
+
+    }
+
 
 }

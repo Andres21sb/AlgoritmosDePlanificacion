@@ -118,7 +118,7 @@ public class View{
                         throw new RuntimeException(ex);
                     }
                 }
-
+                resetArray(listaProcesosCopia);
                 new FCFS(listaProcesosCopia).algoritmoFCFS();
             }
         });
@@ -139,7 +139,7 @@ public class View{
                         throw new RuntimeException(ex);
                     }
                 }
-
+                resetArray(listaProcesosCopia);
                 new SJF(listaProcesosCopia).algoritmoSJF();
             }
         });
@@ -155,6 +155,7 @@ public class View{
                         throw new RuntimeException(ex);
                     }
                 }
+                resetArray(listaProcesosCopia);
                 new SRTF(listaProcesosCopia).algoritmoSRTF();
             }
         });
@@ -181,6 +182,7 @@ public class View{
                     }
 
                     int quantum = Integer.parseInt(textFieldQuantum.getText());
+                    resetArray(listaProcesosCopia);
                     new RoundRobin(listaProcesosCopia,quantum).algoritmoRoundRobinPrioridad();
                 }
         });
@@ -195,6 +197,7 @@ public class View{
                         throw new RuntimeException(ex);
                     }
                 }
+                resetArray(listaProcesosCopia);
                 int quantum = Integer.parseInt(textFieldQuantum.getText());
                 new RoundRobin(listaProcesosCopia,quantum).algoritmoRoundRobin();
             }
@@ -247,5 +250,11 @@ public class View{
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+
+    private void resetArray(List<Proceso> listProcesos){
+        for(Proceso proceso: listProcesos){
+            proceso.getArraySegundosEnEjecucion().clear();
+        }
     }
 }

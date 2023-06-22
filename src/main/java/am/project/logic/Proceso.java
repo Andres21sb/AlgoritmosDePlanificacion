@@ -12,6 +12,7 @@ public class Proceso implements Runnable, Cloneable{
     private String nombre;
     private int llegada;
     private int duracion;
+    private int duracionInicial;
     private int prioridad;
 
     private boolean ejecucion;
@@ -32,12 +33,21 @@ public class Proceso implements Runnable, Cloneable{
         this.nombre = nombre;
         this.llegada = llegada;
         this.duracion = duracion;
+        this.duracionInicial=duracion;
         this.prioridad = prioridad;
         this.ejecucion = ejecucion;
         this.tiempoRestante = duracion;
         Random random = new Random();
         color = new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256));
         this.arraySegundosEnEjecucion = new ArrayList<>();
+    }
+
+    public int getDuracionInicial() {
+        return duracionInicial;
+    }
+
+    public void setDuracionInicial(int duracionInicial) {
+        this.duracionInicial = duracionInicial;
     }
 
     public List<Integer> getArraySegundosEnEjecucion() {
