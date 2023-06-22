@@ -138,7 +138,6 @@ public class SRTF {
             currentTime++;
         }
         new DiagramaGanttSRTF(colaFinal,listaProcesos);
-
     }
 
     private int tiempoMax(){
@@ -156,7 +155,5 @@ public class SRTF {
 
         return max;
     }
-
-
 }
 

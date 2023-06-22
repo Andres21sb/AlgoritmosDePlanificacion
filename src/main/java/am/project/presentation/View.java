@@ -1,8 +1,5 @@
 package am.project.presentation;
-import am.project.logic.FCFS;
-import am.project.logic.Proceso;
-import am.project.logic.SJF;
-import am.project.logic.SRTF;
+import am.project.logic.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -37,6 +34,9 @@ public class View {
     private JLabel JLabelQuantum;
     private JButton buttonEnviar;
     private JTextArea ProcesosTextArea;
+    private JButton prioridadButton;
+    private JButton llegadaButton;
+    private JPanel buttonsRR;
     private Proceso proceso;
 
     private List<Proceso> listaProcesos;
@@ -50,8 +50,6 @@ public class View {
         Proceso proceso3 = new Proceso("P3", 4, 1, 8,false);
         Proceso proceso4 = new Proceso("P4", 5, 4, 9,false);
        // Proceso proceso5 = new Proceso("P5", 9, 3, 10,false);
-
-
 
         //Proceso proceso5 = new Proceso("Pepe", 3, 4, 5);
         //Proceso proceso6 = new Proceso("Pablo", 3, 5, 5);
@@ -92,9 +90,11 @@ public class View {
             public void actionPerformed(ActionEvent e) {
               getJLabelQuantum().setVisible(true);
               getTextFieldQuantum().setVisible(true);
-              getButtonEnviar().setVisible(true);
+              //getButtonEnviar().setVisible(true);
+              getButtonsRR().setVisible(true);
+
                 // Crear una instancia de la clase roundRobin
-               // RoundRobin roundRobin = new RoundRobin();
+                //RoundRobin roundRobin = new RoundRobin();
 
                 // Pasar la lista de procesos a la clase roundRobin
                 //roundRobin.procesoRR(listaProcesos);
@@ -133,8 +133,37 @@ public class View {
             }
         });
 
+       /* buttonEnviar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int quantum = Integer.parseInt(textFieldQuantum.getText());
+                new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+            }
+        });*/
 
 
+        prioridadButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int quantum = Integer.parseInt(textFieldQuantum.getText());
+                    new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+                }
+        });
+        llegadaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int quantum = Integer.parseInt(textFieldQuantum.getText());
+                new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+            }
+        });
+    }
+
+    public JPanel getButtonsRR() {
+        return buttonsRR;
+    }
+
+    public void setButtonsRR(JPanel buttonsRR) {
+        this.buttonsRR = buttonsRR;
     }
 
     public JButton getButtonEnviar() {
