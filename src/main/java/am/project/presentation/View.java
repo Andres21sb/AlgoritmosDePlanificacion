@@ -14,7 +14,7 @@ import java.util.List;
 //import am.project.logic.FCFS;
 
 
-public class View {
+public class View{
     private JPanel panelPrincipal;
     private JLabel mainLabel;
     private JPanel panel2;
@@ -110,7 +110,16 @@ public class View {
                 // Pasar la lista de procesos a la clase FCFS
                 //fcfs.procesoFCFS(listaProcesos);
 
-                new FCFS(listaProcesos).algoritmoFCFS();
+                List<Proceso> listaProcesosCopia = new ArrayList<>();
+                for (Proceso p : listaProcesos) {
+                    try {
+                        listaProcesosCopia.add((Proceso) p.clone());
+                    } catch (CloneNotSupportedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+                new FCFS(listaProcesosCopia).algoritmoFCFS();
             }
         });
 
@@ -122,14 +131,31 @@ public class View {
 
                 // Pasar la lista de procesos a la clase SRTF
                 //srtf.procesoSRTF(listaProcesos);
-                new SJF(listaProcesos).algoritmoSJF();
+                List<Proceso> listaProcesosCopia = new ArrayList<>();
+                for (Proceso p : listaProcesos) {
+                    try {
+                        listaProcesosCopia.add((Proceso) p.clone());
+                    } catch (CloneNotSupportedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+
+                new SJF(listaProcesosCopia).algoritmoSJF();
             }
         });
 
         buttonSRTF.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SRTF(listaProcesos).algoritmoSRTF();
+                List<Proceso> listaProcesosCopia = new ArrayList<>();
+                for (Proceso p : listaProcesos) {
+                    try {
+                        listaProcesosCopia.add((Proceso) p.clone());
+                    } catch (CloneNotSupportedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+                new SRTF(listaProcesosCopia).algoritmoSRTF();
             }
         });
 
@@ -145,15 +171,32 @@ public class View {
         prioridadButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    List<Proceso> listaProcesosCopia = new ArrayList<>();
+                    for (Proceso p : listaProcesos) {
+                        try {
+                            listaProcesosCopia.add((Proceso) p.clone());
+                        } catch (CloneNotSupportedException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
+
                     int quantum = Integer.parseInt(textFieldQuantum.getText());
-                    new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+                    new RoundRobin(listaProcesosCopia,quantum).algoritmoRoundRobinPrioridad();
                 }
         });
         llegadaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                List<Proceso> listaProcesosCopia = new ArrayList<>();
+                for (Proceso p : listaProcesos) {
+                    try {
+                        listaProcesosCopia.add((Proceso) p.clone());
+                    } catch (CloneNotSupportedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
                 int quantum = Integer.parseInt(textFieldQuantum.getText());
-                new RoundRobin(listaProcesos,quantum).algoritmoRoundRobin();
+                new RoundRobin(listaProcesosCopia,quantum).algoritmoRoundRobin();
             }
         });
     }
