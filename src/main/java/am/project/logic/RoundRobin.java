@@ -5,13 +5,17 @@ import am.project.presentation.DiagramaGanttRR;
 import am.project.presentation.DiagramaGanttSRTF;
 
 import java.util.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class RoundRobin {
     private List<Proceso> listaProcesos;
+    private Lock lock;
     private int quantum;
 
     public RoundRobin(List<Proceso> listaProcesos, int quantum) {
         this.listaProcesos = listaProcesos;
+        lock = new ReentrantLock();
         this.quantum = quantum;
     }
 
@@ -32,6 +36,13 @@ public class RoundRobin {
 
         while (!colaProcesos.isEmpty()) {
             Proceso proceso = colaProcesos.poll();
+            // Ejecutar el método run del proceso utilizando el Lock
+            lock.lock();
+            try {
+                proceso.run();
+            } finally {
+                lock.unlock();
+            }
 
             for (int i = 0; i < quantum; i++) {
                 proceso.setDuracion(proceso.getDuracion() - 1);
@@ -79,7 +90,13 @@ public class RoundRobin {
                 proceso.setDuracion(proceso.getDuracion() - 1);
 
                 proceso.getArraySegundosEnEjecucion().add(tiempoFinalizacion);
-
+                // Ejecutar el método run del proceso utilizando el Lock
+                lock.lock();
+                try {
+                    proceso.run();
+                } finally {
+                    lock.unlock();
+                }
                 listaProcesosFinal.add(proceso);
                 if (proceso.getDuracion() == 0) {
                     proceso.setTiempoFinalizacion(tiempoFinalizacion);

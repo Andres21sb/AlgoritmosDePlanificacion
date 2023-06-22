@@ -153,15 +153,6 @@ public class Proceso implements Runnable, Cloneable{
     public void run() {
         // Lógica del proceso en su ejecución
         System.out.println("Proceso " + nombre + " en ejecución");
-        try {
-            while (tiempoRestante > 0) {
-                Thread.sleep(1); // Simulación de la duración del proceso
-                tiempoRestante--;
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Proceso " + nombre + " finalizado");
     }
 
     public void suspender() {

@@ -125,6 +125,13 @@ public class SRTF {
                 colaFinal.add(colaEspera.get(0));
                 //incluir el segundo en la lista
                 colaEspera.get(0).getArraySegundosEnEjecucion().add(currentTime);
+                // Ejecutar el método run del proceso utilizando el Lock
+                lock.lock();
+                try {
+                    colaEspera.get(0).run();
+                } finally {
+                    lock.unlock();
+                }
                 //disminuir el tiempo restante
                 colaEspera.get(0).setTiempoRestante(colaEspera.get(0).getTiempoRestante()-1);
                 //disminuir en 1 el tiempo de espera si es mayor a 0
